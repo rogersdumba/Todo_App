@@ -1,0 +1,98 @@
+/* TodoApp.css */
+body {
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .todo-container {
+    min-height: 100vh;
+    background-color: #f7fafc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .todo-header {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    color: #333;
+  }
+  
+  .todo-input-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .todo-input {
+    flex-grow: 1;
+    padding: 0.5rem;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    font-size: 1rem;
+  }
+  
+  .todo-button {
+    background-color: #3182ce;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .category-select {
+    padding: 0.5rem;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+  }
+  
+  .add-category-button {
+    margin-bottom: 20px;
+    background-color: #9f7aea;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+  }
+  
+  .task-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+  }
+  
+  .task-card.completed {
+    background-color: #f0fff4;
+  }
+  
+  .task-text {
+    font-size: 1.125rem;
+    color: #2d3748;
+    margin-right: 10px;
+  }
+  
+  .task-text.completed {
+    text-decoration: line-through;
+    color: #cbd5e0;
+  }
+  
+  .delete-icon {
+    cursor: pointer;
+    color: #e53e3e;
+  }
+  
+  .task-category {
+    font-size: 0.875rem;
+    color: #718096;
+  }
+  
