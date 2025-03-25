@@ -61,7 +61,7 @@ const TodoApp = () => {
   return (
     <DndProvider backend={HTML5Backend}>
       <div className="todo-container">
-        <h1 className="todo-header">Todo App</h1>
+        <h1 className="todo-header">Create Tasks Here</h1>
         <div className="todo-input-container">
           <Input
             type="text"
@@ -79,18 +79,24 @@ const TodoApp = () => {
               <option key={i} value={cat}>{cat}</option>
             ))}
           </select>
+          <label htmlFor="start-date" className='dateStart'>Start Date:</label>
           <Input
-            type="date"
-            value={startDate}
-            onChange={(e) => setStartDate(e.target.value)}
-            className="date-input"
+          id="start-date"
+          type="date"
+          value={startDate}
+          onChange={(e) => setStartDate(e.target.value)}
+          className="date-input"
           />
-          <Input
-            type="date"
-            value={endDate}
-            onChange={(e) => setEndDate(e.target.value)}
-            className="date-input"
-          />
+
+         <label htmlFor="end-date" className='dateEnd'>End Date:</label>
+         <Input
+         id="end-date"
+         type="date"
+         value={endDate}
+         onChange={(e) => setEndDate(e.target.value)}
+         className="date-input"
+        />
+
           <Button onClick={addTask} className="todo-button">
             Add
           </Button>

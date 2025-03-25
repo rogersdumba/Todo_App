@@ -1,98 +1,194 @@
 /* TodoApp.css */
 body {
-    font-family: 'Arial', sans-serif;
-  }
-  
-  .todo-container {
-    min-height: 100vh;
-    background-color: #f7fafc;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-  }
-  
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Container Styling */
+.todo-container {
+  min-height: 100vh;
+  background-color: #f7fafc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Header Styling */
+.todo-header {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: #333;
+  text-align: center;
+}
+
+/* Input Container Styling */
+.todo-input-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Input Field Styling */
+.todo-input,
+.date-input,
+.category-select {
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  font-size: 1rem;
+}
+
+/* Button Styling */
+.todo-button,
+.add-category-button {
+  background-color: #3182ce;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+/* Add Category Button */
+.add-category-button {
+  background-color: #9f7aea;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Button Hover Effects */
+.todo-button:hover,
+.add-category-button:hover {
+  opacity: 0.9;
+}
+
+/* Task Card Styling */
+.task-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Completed Task Styling */
+.task-card.completed {
+  background-color: #f0fff4;
+}
+
+.task-text {
+  font-size: 1.125rem;
+  color: #2d3748;
+  margin-right: 10px;
+}
+
+/* Completed Task Text */
+.task-text.completed {
+  text-decoration: line-through;
+  color: #cbd5e0;
+}
+
+/* Delete Icon Styling */
+.delete-icon {
+  cursor: pointer;
+  color: #e53e3e;
+}
+
+/* Task Category Styling */
+.task-category {
+  font-size: 0.875rem;
+  color: #718096;
+}
+
+/* Date Picker Styling */
+.dateStart,
+.dateEnd {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Media Query for Mobile (small screens) */
+@media (max-width: 480px) {
   .todo-header {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 1.5rem;
-    color: #333;
+    font-size: 1.5rem;
   }
-  
+
   .todo-input-container {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
-  }
-  
-  .todo-input {
-    flex-grow: 1;
-    padding: 0.5rem;
-    border-radius: 8px;
-    border: 1px solid #e2e8f0;
-    font-size: 1rem;
-  }
-  
-  .todo-button {
-    background-color: #3182ce;
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    font-size: 1rem;
-    cursor: pointer;
-  }
-  
-  .category-select {
-    padding: 0.5rem;
-    border-radius: 8px;
-    border: 1px solid #e2e8f0;
-  }
-  
-  .add-category-button {
-    margin-bottom: 20px;
-    background-color: #9f7aea;
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
+    flex-direction: column;
     gap: 5px;
-    cursor: pointer;
   }
-  
+
+  .todo-button,
+  .add-category-button {
+    width: 100%;
+  }
+
   .task-card {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-    border-radius: 10px;
-    background-color: white;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-bottom: 10px;
+    padding: 0.8rem;
   }
-  
-  .task-card.completed {
-    background-color: #f0fff4;
-  }
-  
+
   .task-text {
-    font-size: 1.125rem;
-    color: #2d3748;
-    margin-right: 10px;
+    font-size: 1rem;
   }
-  
-  .task-text.completed {
-    text-decoration: line-through;
-    color: #cbd5e0;
+}
+
+/* Media Query for Tablets */
+@media (min-width: 481px) and (max-width: 768px) {
+  .todo-container {
+    padding: 10px;
   }
-  
-  .delete-icon {
-    cursor: pointer;
-    color: #e53e3e;
+
+  .todo-input-container {
+    flex-wrap: wrap;
+    justify-content: center;
   }
-  
-  .task-category {
-    font-size: 0.875rem;
-    color: #718096;
+
+  .todo-button,
+  .add-category-button {
+    padding: 0.5rem 0.8rem;
   }
-  
+
+  .task-card {
+    max-width: 300px;
+  }
+}
+
+/* Media Query for Desktop (Large screens) */
+@media (min-width: 769px) {
+  .todo-container {
+    padding: 30px;
+  }
+
+  .todo-header {
+    font-size: 2.5rem;
+  }
+
+  .todo-input-container {
+    gap: 15px;
+  }
+
+  .todo-button,
+  .add-category-button {
+    padding: 0.5rem 1.5rem;
+  }
+
+  .task-card {
+    width: 100%;
+    max-width: 500px;
+  }
+}
