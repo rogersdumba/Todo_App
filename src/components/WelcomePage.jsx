@@ -9,7 +9,6 @@ const WelcomePage = () => {
       <p className="welcome-text">Manage your tasks with ease.</p>
       <div className="button-container">
         <Link to="/login" className="welcome-button">Login</Link>
-        <Link to="/todo" className="welcome-button">Go to Todo App</Link>
       </div>
     </div>
   );

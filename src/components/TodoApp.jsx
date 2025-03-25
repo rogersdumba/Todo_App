@@ -13,6 +13,8 @@ const TodoApp = () => {
   const [newTask, setNewTask] = useState('');
   const [category, setCategory] = useState('General');
   const [categories, setCategories] = useState(['General']);
+  const [startDate, setStartDate] = useState('');
+  const [endDate, setEndDate] = useState('');
   const navigate = useNavigate(); // ✅ Replaced useHistory with useNavigate
 
   useEffect(() => {
@@ -25,9 +27,11 @@ const TodoApp = () => {
   }, [tasks]);
 
   const addTask = () => {
-    if (newTask.trim() !== '') {
-      setTasks([...tasks, { text: newTask, completed: false, category }]);
+    if (newTask.trim() !== '' && startDate && endDate) {
+      setTasks([...tasks, { text: newTask, completed: false, category, startDate, endDate }]);
       setNewTask('');
+      setStartDate('');
+      setEndDate('');
     }
   };
 
@@ -75,6 +79,18 @@ const TodoApp = () => {
               <option key={i} value={cat}>{cat}</option>
             ))}
           </select>
+          <Input
+            type="date"
+            value={startDate}
+            onChange={(e) => setStartDate(e.target.value)}
+            className="date-input"
+          />
+          <Input
+            type="date"
+            value={endDate}
+            onChange={(e) => setEndDate(e.target.value)}
+            className="date-input"
+          />
           <Button onClick={addTask} className="todo-button">
             Add
           </Button>
@@ -95,6 +111,7 @@ const TodoApp = () => {
                   />
                   <span className={`task-text ${task.completed ? 'completed' : ''}`}>{task.text}</span>
                   <span className="task-category">({task.category})</span>
+                  <span className="task-dates">{task.startDate} - {task.endDate}</span>
                 </CardContent>
                 <Trash2 className="delete-icon" onClick={() => deleteTask(index)} />
               </Card>
